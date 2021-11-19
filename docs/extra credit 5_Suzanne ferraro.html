@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title> Adding layers using other API modules</title>
+
+        <style>
+            html,
+            body,
+            #viewDiv {
+                padding: 0;
+                margin: 0;
+                height: 100%;
+                width: 100%
+            }
+        </style>
+
+        <link rel="stylesheet" herf="https://js.arcgis.com/4.21/esri/css/main.css">
+        <script src="https:js.arcgis.com/4.2"></script>
+
+        <script>
+            require([
+                "esri/Map",
+                "esri/views/MapView"
+            ], function(
+                Map, Mapview
+            ) {
+
+                var myMap = new Map ({
+                    basemap: "gray",
+                });
+
+                var myView = new MapView({
+                    container: "viewDiv",
+                    map: myMap, 
+                    zoom:4,
+                    center:[-98.59, 39.83]
+                });
+            });
+        </script>
+
+
+    </head>
+</html>
